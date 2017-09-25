@@ -18,10 +18,16 @@ count_loop()
 
 def count_recursive(n=1):
     """Count to 3, using recursion."""
+
+    # BASE CASE
     if n > 3:
         return
+
+    # initial 1 2 3
     print n,
     count_recursive(n + 1)
+
+    # going back out, 3 2 1
     print n,
 
 
@@ -93,9 +99,11 @@ lst = [7, 4, 3, 2]
 def lenlist(lst):
     """Return length of list, using recursion."""
 
+    # when list empty (r/t taking first item out of list w/ each recursion)
     if not lst:
         return 0
 
+    # return 1 + 0 during first break = 1, then 2, 3, and ultimately 4
     return 1 + lenlist(lst[1:])
 
 
@@ -123,9 +131,12 @@ root = Node("/", [
 
 
 def ls(node):
-    """List all nodes."""
+    """List all nodes. Depth 1st search."""
 
+    # print current node
     print node.data
+
+    # print descendants until no children left (when for loop done)
     for child in node.children:
         ls(child)
 
